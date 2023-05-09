@@ -1,0 +1,61 @@
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let participant"> {{ participant.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        First Name
+      </mat-header-cell>
+      <mat-cell *matCellDef="let participant">
+        {{ participant.firstName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Last Name
+      </mat-header-cell>
+      <mat-cell *matCellDef="let participant">
+        {{ participant.lastName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="centerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Center Name
+      </mat-header-cell>
+      <mat-cell *matCellDef="let participant">
+        {{ participant.centerName }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ranking">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Ranking
+      </mat-header-cell>
+      <mat-cell *matCellDef="let participant">
+        {{ participant.ranking }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="recordTime">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Record Time
+      </mat-header-cell>
+      <mat-cell *matCellDef="let participant">
+        {{ participant.recordTime }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

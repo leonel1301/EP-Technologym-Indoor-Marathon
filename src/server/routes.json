@@ -1,0 +1,5 @@
+{
+  "/api/v1/participants": "/participants",
+  "/api/v1/centers": "/centers",
+  "/api/v1/centers/:centerId/participants": "/participants?centerId=:centerId"
+}
